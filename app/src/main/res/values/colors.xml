@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#3F51B5</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="DarkBlue">#034275</color>
+    <color name="LightBlue">#6ABDFF</color>
+    <color name="BackBlue">#B404486A</color>
+    <color name="Yellow">#FFC107</color>
+    <color name="LightYellow">#C6D818</color>
+    <color name="PinkCard">#BFFA3779</color>
+    <color name="greenCard">#BF45E44C</color>
+    <color name="OrangeCard">#BFF17953</color>
+    <color name="flora">#009688</color>
+</resources>
