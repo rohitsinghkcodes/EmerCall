@@ -9,6 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SplashScreen"></activity>
+        <activity android:name=".foreigner" />
+        <activity android:name=".children" />
+        <activity android:name=".enquiry" />
+        <activity android:name=".accidents" />
+        <activity android:name=".categ_women" />
+        <activity android:name=".categ_basic" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,5 +24,5 @@
             </intent-filter>
         </activity>
     </application>
-
+<uses-permission android:name="android.permission.CALL_PHONE"/>
 </manifest>
