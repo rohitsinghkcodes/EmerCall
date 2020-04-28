@@ -12,5 +12,6 @@ public class accidents extends AppCompatActivity {
         setContentView(R.layout.activity_accidents);
 
         this.setTitle("Accidents EmerCalls");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

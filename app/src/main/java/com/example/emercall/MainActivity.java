@@ -47,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.exit:
                 MainActivity.super.onBackPressed();
                 return true;
-//            case R.id.about:
-//                Intent i =new Intent(MainActivity.this,info.class);
-//                startActivity(i);
-//                return true;
+            case R.id.about:
+                Intent i =new Intent(MainActivity.this,about_section.class);
+                startActivity(i);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -152,8 +152,8 @@ public class MainActivity extends AppCompatActivity {
             View v = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_main,null);
             ImageView cateIcon = v.findViewById(R.id.cateIcon);
             TextView cateName = v.findViewById(R.id.cateName);
-            cateIcon.setBackgroundColor(getResources().getColor(R.color.grey));
-            cateName.setBackgroundColor(getResources().getColor(R.color.grey));
+            cateIcon.setBackgroundColor(getResources().getColor(R.color.berry));
+            cateName.setBackgroundColor(getResources().getColor(R.color.berry));
             cateName.setText(data.get(position));
             cateIcon.setImageResource(Icons.get(position));
             return v;

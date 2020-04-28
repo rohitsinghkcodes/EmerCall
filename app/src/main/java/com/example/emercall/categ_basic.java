@@ -43,6 +43,7 @@ public class categ_basic extends AppCompatActivity {
 
         //To change toolbar title
         this.setTitle("Basic EmerCalls");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Numbers
         text.add("National Emergency Number");

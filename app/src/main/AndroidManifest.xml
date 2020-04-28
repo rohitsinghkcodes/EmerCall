@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.emercall">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,20 +11,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen"></activity>
-        <activity android:name=".foreigner" />
-        <activity android:name=".children" />
-        <activity android:name=".enquiry" />
-        <activity android:name=".accidents" />
-        <activity android:name=".categ_women" />
-        <activity android:name=".categ_basic" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".about_section" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".foreigner" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".children" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".enquiry" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".accidents" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".categ_women" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".categ_basic" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
-<uses-permission android:name="android.permission.CALL_PHONE"/>
+
 </manifest>

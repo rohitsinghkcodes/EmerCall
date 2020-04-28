@@ -12,5 +12,6 @@ public class foreigner extends AppCompatActivity {
         setContentView(R.layout.activity_foreigner);
 
         this.setTitle("Foreigner EmerCalls");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

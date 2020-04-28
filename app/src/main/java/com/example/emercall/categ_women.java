@@ -12,5 +12,6 @@ public class categ_women extends AppCompatActivity {
         setContentView(R.layout.activity_categ_women);
 
         this.setTitle("Women Safety");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

@@ -12,5 +12,6 @@ public class children extends AppCompatActivity {
         setContentView(R.layout.activity_children);
 
         this.setTitle("Child Safety EmeCalls");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

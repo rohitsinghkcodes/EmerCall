@@ -39,6 +39,7 @@ public class enquiry extends AppCompatActivity {
 
         //To change toolbar title
         this.setTitle("Enquiry EmerCalls");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         grid_enquiry = findViewById(R.id.grid_enquiry);
         myAdapter = new MyAdapter();
