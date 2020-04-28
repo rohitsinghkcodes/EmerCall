@@ -29,6 +29,7 @@ public class categ_basic extends AppCompatActivity {
     ArrayList<Integer> colors = new ArrayList<>();
     ArrayList<Integer> Icons = new ArrayList<>();
     ArrayList<String> num = new ArrayList<>();
+
     private static final int REQUEST_CALL = 1;
 
     @Override
@@ -40,6 +41,8 @@ public class categ_basic extends AppCompatActivity {
         myAdapter = new MyAdapter();
         gridBasic.setAdapter(myAdapter);
 
+        //To change toolbar title
+        this.setTitle("Basic EmerCalls");
 
         //Numbers
         text.add("National Emergency Number");
@@ -103,10 +106,13 @@ public class categ_basic extends AppCompatActivity {
             View v = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_categories,null);
             ImageView itemIcon = v.findViewById(R.id.itemIcon);
             TextView itemName = v.findViewById(R.id.itemName);
+            TextView itemNo = v.findViewById(R.id.itemNum);
             int pos = position%colors.size();
             itemIcon.setBackgroundColor(getResources().getColor(colors.get(pos)));
             itemName.setBackgroundColor(getResources().getColor(colors.get(pos)));
-            itemName.setText(text.get(position)+"\n"+num.get(position));
+            itemNo.setBackgroundColor(getResources().getColor(colors.get(pos)));
+            itemName.setText(text.get(position));
+            itemNo.setText(num.get(position));
             itemIcon.setImageResource(Icons.get(position));
             return v;
         }

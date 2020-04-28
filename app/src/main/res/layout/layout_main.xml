@@ -21,7 +21,7 @@
                 android:layout_height="120dp"
                 android:src="@drawable/default_avatar"
                 android:paddingHorizontal="8dp"
-                android:paddingTop="15dp"
+                android:paddingTop="23dp"
                 android:background="@color/OrangeCard"/>
 
             <TextView
@@ -34,7 +34,8 @@
                 android:textColor="#ffffff"
                 android:textSize="15dp"
                 android:background="@color/OrangeCard"
-                android:padding="10dp"/>
+                android:padding="10dp"
+                android:paddingBottom="5dp"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

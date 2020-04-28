@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     GridView gridMain;
     Myadapter myAdap;
     ArrayList<String> data = new ArrayList<>();
-    ArrayList<Integer> colors = new ArrayList<>();
+    //ArrayList<Integer> colors = new ArrayList<>();
     ArrayList<Integer> Icons = new ArrayList<>();
 
     //Exit from the app if back pressed from home screen
@@ -65,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
         myAdap = new Myadapter();
         gridMain.setAdapter(myAdap);
 
+        //To change toolbar title
+        this.setTitle("EmerCall Categories");
+
         //CATEGORIES
         data.add("BASIC EMERCALLS");
         data.add("ENQUIRY");
@@ -74,16 +77,16 @@ public class MainActivity extends AppCompatActivity {
         data.add("FOREIGNERS");
 
         //COLORS
-        colors.add(R.color.flora);
-        colors.add(R.color.greenCard);
-        colors.add(R.color.Yellow);
-        colors.add(R.color.OrangeCard);
-        colors.add(R.color.PinkCard);
-        colors.add(R.color.LightYellow);
+        //colors.add(R.color.flora);
+//        colors.add(R.color.greenCard);
+//        colors.add(R.color.Yellow);
+//        colors.add(R.color.OrangeCard);
+//        colors.add(R.color.PinkCard);
+//        colors.add(R.color.LightYellow);
 
         //ICONS
         Icons.add(R.drawable.primary);
-        Icons.add(R.drawable.enquiry);
+        Icons.add(R.drawable.icon_enquiry);
         Icons.add(R.drawable.accidents);
         Icons.add(R.drawable.women_safety);
         Icons.add(R.drawable.child);
@@ -149,9 +152,8 @@ public class MainActivity extends AppCompatActivity {
             View v = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_main,null);
             ImageView cateIcon = v.findViewById(R.id.cateIcon);
             TextView cateName = v.findViewById(R.id.cateName);
-            int pos = position%colors.size();
-            cateIcon.setBackgroundColor(getResources().getColor(colors.get(pos)));
-            cateName.setBackgroundColor(getResources().getColor(colors.get(pos)));
+            cateIcon.setBackgroundColor(getResources().getColor(R.color.grey));
+            cateName.setBackgroundColor(getResources().getColor(R.color.grey));
             cateName.setText(data.get(position));
             cateIcon.setImageResource(Icons.get(position));
             return v;

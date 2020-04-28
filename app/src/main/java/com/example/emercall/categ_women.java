@@ -10,5 +10,7 @@ public class categ_women extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categ_women);
+
+        this.setTitle("Women Safety");
     }
 }

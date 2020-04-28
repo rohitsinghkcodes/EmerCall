@@ -10,5 +10,7 @@ public class accidents extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accidents);
+
+        this.setTitle("Accidents EmerCalls");
     }
 }

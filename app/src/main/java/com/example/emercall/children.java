@@ -10,5 +10,7 @@ public class children extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_children);
+
+        this.setTitle("Child Safety EmeCalls");
     }
 }
