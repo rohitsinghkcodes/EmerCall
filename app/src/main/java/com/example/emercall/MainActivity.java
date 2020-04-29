@@ -152,8 +152,8 @@ public class MainActivity extends AppCompatActivity {
             View v = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_main,null);
             ImageView cateIcon = v.findViewById(R.id.cateIcon);
             TextView cateName = v.findViewById(R.id.cateName);
-            cateIcon.setBackgroundColor(getResources().getColor(R.color.berry));
-            cateName.setBackgroundColor(getResources().getColor(R.color.berry));
+            cateIcon.setBackgroundColor(getResources().getColor(R.color.flora));
+            cateName.setBackgroundColor(getResources().getColor(R.color.flora));
             cateName.setText(data.get(position));
             cateIcon.setImageResource(Icons.get(position));
             return v;

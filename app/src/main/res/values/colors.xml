@@ -5,13 +5,13 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="DarkBlue">#034275</color>
     <color name="LightBlue">#6ABDFF</color>
-    <color name="BackBlue">#B404486A</color>
+    <color name="BackBlue">#720086CA</color>
     <color name="Yellow">#FFC107</color>
     <color name="LightYellow">#C6D818</color>
     <color name="PinkCard">#BFFA3779</color>
     <color name="greenCard">#BF45E44C</color>
     <color name="OrangeCard">#BFF17953</color>
-    <color name="flora">#008C7F</color>
-    <color name="berry">#A1525FA6</color>
+    <color name="flora">#007167</color>
+    <color name="berry">#E15569DA</color>
     <color name="grey_V2">#662C2E2E</color>
 </resources>

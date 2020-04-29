@@ -38,7 +38,7 @@ public class enquiry extends AppCompatActivity {
         setContentView(R.layout.activity_enquiry);
 
         //To change toolbar title
-        this.setTitle("Enquiry EmerCalls");
+        this.setTitle("ENQUIRY EMERCALLS");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         grid_enquiry = findViewById(R.id.grid_enquiry);
@@ -48,20 +48,20 @@ public class enquiry extends AppCompatActivity {
 
 
         //Numbers
-        text.add("National Emergency Number");
-        text.add("Police");
-        text.add("Fire");
-        text.add("Ambulance");
-        text.add("Medical Helpline");
-        text.add("FOREIGNERS");
+        text.add("");
+        text.add("");
+        text.add("");
+        text.add("");
+        text.add("");
+        text.add("");
 
         //Numbers
-        number.add("112");
-        number.add("100");
-        number.add("101");
-        number.add("102");
-        number.add("108");
-        number.add("12248");
+        number.add("#");
+        number.add("#");
+        number.add("#");
+        number.add("#");
+        number.add("#");
+        number.add("#");
 
         //COLORS
         colors.add(R.color.PinkCard);
@@ -72,12 +72,12 @@ public class enquiry extends AppCompatActivity {
         colors.add(R.color.LightYellow);
 
         //ICONS
-        Icons.add(R.drawable.nat_emer_no);
-        Icons.add(R.drawable.police);
-        Icons.add(R.drawable.fire);
-        Icons.add(R.drawable.ambulance);
-        Icons.add(R.drawable.medical_helpline);
-        Icons.add(R.drawable.foreigner);
+        Icons.add(R.drawable.icon_enquiry);
+        Icons.add(R.drawable.icon_enquiry);
+        Icons.add(R.drawable.icon_enquiry);
+        Icons.add(R.drawable.icon_enquiry);
+        Icons.add(R.drawable.icon_enquiry);
+        Icons.add(R.drawable.icon_enquiry);
 
         //PhoneCall on click
         grid_enquiry.setOnItemClickListener(new AdapterView.OnItemClickListener() {

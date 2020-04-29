@@ -42,7 +42,7 @@ public class categ_basic extends AppCompatActivity {
         gridBasic.setAdapter(myAdapter);
 
         //To change toolbar title
-        this.setTitle("Basic EmerCalls");
+        this.setTitle("PRIMARY EMERCALLS");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Numbers
