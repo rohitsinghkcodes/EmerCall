@@ -26,11 +26,24 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> data = new ArrayList<>();
     //ArrayList<Integer> colors = new ArrayList<>();
     ArrayList<Integer> Icons = new ArrayList<>();
+    private long backPressedTime ;
+    private  Toast backToast;
 
     //Exit from the app if back pressed from home screen
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        if(backPressedTime + 2000 > System.currentTimeMillis() )
+        {
+            backToast.cancel();
+            super.onBackPressed();
+            return;
+        }
+        else
+        {
+           backToast = Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT);
+           backToast.show();
+        }
+        backPressedTime = System.currentTimeMillis();
     }
 
     @Override

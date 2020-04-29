@@ -21,9 +21,9 @@
 
             <ImageView
                 android:id="@+id/icon"
-                android:layout_marginTop="100dp"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:layout_marginTop="70dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:foregroundGravity="center"
                 android:src="@drawable/emer_call" />
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="# Minimalistic design.\n# Categorised Sections.\n# Friendly and Colourful Interface.\n# Calling feature within the application"
+                android:text=">>  Minimalistic design.\n>>  Categorised Sections.\n>>  Friendly and Colourful Interface.\n>>  Calling feature within the application."
                 android:textSize="20dp"
                 android:layout_marginTop="7dp"
                 android:layout_marginHorizontal="20dp"
@@ -86,25 +86,29 @@
                 android:layout_gravity="center"
                 android:gravity="center">
                 <ImageView
+                    android:id="@+id/ld_in"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="18dp"
-                    android:src="@drawable/default_avatar"/>
+                    android:src="@drawable/ld_in"/>
                 <ImageView
+                    android:id="@+id/git"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="18dp"
-                    android:src="@drawable/default_avatar"/>
+                    android:src="@drawable/github"/>
                 <ImageView
+                    android:id="@+id/insta"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="18dp"
-                    android:src="@drawable/default_avatar"/>
+                    android:src="@drawable/insta"/>
                 <ImageView
+                    android:id="@+id/twitter"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="18dp"
-                    android:src="@drawable/default_avatar"/>
+                    android:src="@drawable/twit"/>
             </LinearLayout>
             <TextView
                 android:id="@+id/copyright"
