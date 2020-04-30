@@ -6,7 +6,7 @@ Alas, such a world is not the one we inhabit. Thankfully, we have access to emer
 
 ### Therefore I present you EmerCall >
 
-* **EmerCall** is an emergrncy calling application which contains all the emergency numbers a person needs at the time of emergrncy.\n\n   The numbers are placed in categorised manner which makes the application simpler to use.\n\nThis application also allows the user can to a call from the app itself.
+* **EmerCall** is an emergrncy calling application which contains all the phone numbers a person needs at the time of emergency.\n\n   The numbers are placed in categorised manner which makes the application simpler to use.\n\nThis application also allows the user to make calls from the app itself.
 
 
 
