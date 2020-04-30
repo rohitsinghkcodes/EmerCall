@@ -22,38 +22,53 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class accidents extends AppCompatActivity {
-    GridView acci_grid;
+public class medical extends AppCompatActivity {
+    GridView grid_medical;
     MyAdapter myAdapter;
     ArrayList<String> text = new ArrayList<>();
-    ArrayList<String> number = new ArrayList<>();
-    public static final int REQUEST_CALL = 1;
+    ArrayList<String> num = new ArrayList<>();
+
+    private static final int REQUEST_CALL = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_accidents);
+        setContentView(R.layout.activity_medical);
 
-        this.setTitle("ACCIDENT HELPLINE");
+        grid_medical = findViewById(R.id.grid_medical);
+        myAdapter = new MyAdapter();
+        grid_medical.setAdapter(myAdapter);
+
+        //To change toolbar title
+        this.setTitle("MEDICAL HELPLINE");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        acci_grid = findViewById(R.id.acci_grid);
-        myAdapter = new MyAdapter();
-        acci_grid.setAdapter(myAdapter);
+        //Numbers
+        text.add("Medical Helpline");
+        text.add("Air Amulance");
+        text.add("Aids Helpline");
+
+        text.add("Anti-Poison (Delhi)");
+        text.add("Blood Bank Helpline");
+        text.add("BHARAT BLOOD BANK");
+
+        text.add("indianredcross.org");
+        text.add("sankalpindia.net");
 
         //Numbers
-        text.add("Road Accident Emergency Service");
-        text.add("Road Accident Emergency On National Highway for Private Operators");
-        text.add("Railway Accident Emergency Service");
+        num.add("108");
+        num.add("9540161344");
+        num.add("1097");
 
-        //Numbers
-        number.add("1073");
-        number.add("1033");
-        number.add("1072");
+        num.add("1066");
+        num.add("07966772377");
+        num.add("0442463150");
 
+        num.add("01123359379");
+        num.add("9480044444");
 
-        //PhoneCall on click
-        acci_grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        grid_medical.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 makeCall(position);
@@ -62,7 +77,7 @@ public class accidents extends AppCompatActivity {
 
     }
 
-    class MyAdapter extends BaseAdapter{
+    class MyAdapter extends BaseAdapter {
 
         @Override
         public int getCount() {
@@ -85,12 +100,13 @@ public class accidents extends AppCompatActivity {
             ImageView itemIcon = v.findViewById(R.id.itemIcon);
             TextView itemName = v.findViewById(R.id.itemName);
             TextView itemNo = v.findViewById(R.id.itemNum);
-            itemIcon.setBackgroundColor(getResources().getColor(R.color.greenCard));
-            itemName.setBackgroundColor(getResources().getColor(R.color.greenCard));
-            itemNo.setBackgroundColor(getResources().getColor(R.color.greenCard));
+
+            itemIcon.setBackgroundColor(getResources().getColor(R.color.Yellow));
+            itemName.setBackgroundColor(getResources().getColor(R.color.Yellow));
+            itemNo.setBackgroundColor(getResources().getColor(R.color.Yellow));
             itemName.setText(text.get(position));
-            itemNo.setText(number.get(position));
-            itemIcon.setImageResource(R.drawable.accidents);
+            itemNo.setText(num.get(position));
+            itemIcon.setImageResource(R.drawable.medical_helpline);
             return v;
         }
     }
@@ -98,15 +114,15 @@ public class accidents extends AppCompatActivity {
     //Code for making a checking permission and making phone call from the app
     void makeCall(int position)
     {
-        String no = number.get(position);
+        String no = num.get(position);
 
         //code for checking permission for making phone calls
         if(no.trim().length() > 0){
-            if(ContextCompat.checkSelfPermission(accidents.this,
+            if(ContextCompat.checkSelfPermission(medical.this,
                     Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
 
                 //Code for checking manifest permission
-                ActivityCompat.requestPermissions(accidents.this,
+                ActivityCompat.requestPermissions(medical.this,
                         new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
 
             }else{
@@ -116,7 +132,7 @@ public class accidents extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
             }
         }else{
-            Toast.makeText(accidents.this,"Error!\nNumber not exists",Toast.LENGTH_LONG).show();
+            Toast.makeText(medical.this,"Error!\nNumber no exists",Toast.LENGTH_LONG).show();
         }
     }
 
@@ -127,9 +143,8 @@ public class accidents extends AppCompatActivity {
         if(requestCode == REQUEST_CALL){
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
             }else{
-                Toast.makeText(accidents.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(medical.this, "Permission Denied", Toast.LENGTH_SHORT).show();
             }
         }
     }
 }
-

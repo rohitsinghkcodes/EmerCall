@@ -26,8 +26,6 @@ public class categ_women extends AppCompatActivity {
     GridView grid_women;
     MyAdapter myAdapter ;
     ArrayList<String> text = new ArrayList<>();
-    ArrayList<Integer> colors = new ArrayList<>();
-    ArrayList<Integer> Icons = new ArrayList<>();
     ArrayList<String> number = new ArrayList<>();
     public static final int REQUEST_CALL = 1;
 
@@ -36,7 +34,7 @@ public class categ_women extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categ_women);
 
-        this.setTitle("WOMEN SAFETY EMERCALLS");
+        this.setTitle("WOMEN SAFETY HELPLINE");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         grid_women = findViewById(R.id.grid_women);
@@ -44,36 +42,19 @@ public class categ_women extends AppCompatActivity {
         grid_women.setAdapter(myAdapter);
 
         //Numbers
-        text.add("");
-        text.add("");
-        text.add("");
-        text.add("");
-        text.add("");
-        text.add("");
+        text.add("Women Helpline");
+        text.add("Women Helpline\n(Domestic Abuse)");
+        text.add("National Commission for Women (NCW)");
+        text.add("Deputy Commissioner of Police\n(missing child and women)");
+        text.add("Delhi Commisssioner for Women");
 
         //Numbers
-        number.add("#");
-        number.add("#");
-        number.add("#");
-        number.add("#");
-        number.add("#");
-        number.add("#");
+        number.add("1091");
+        number.add("181");
+        number.add("011 26942369");
+        number.add("1094");
+        number.add("011 23378044");
 
-        //COLORS
-        colors.add(R.color.PinkCard);
-        colors.add(R.color.OrangeCard);
-        colors.add(R.color.greenCard);
-        colors.add(R.color.Yellow);
-        colors.add(R.color.flora);
-        colors.add(R.color.LightYellow);
-
-        //ICONS
-        Icons.add(R.drawable.women_safety);
-        Icons.add(R.drawable.women_safety);
-        Icons.add(R.drawable.women_safety);
-        Icons.add(R.drawable.women_safety);
-        Icons.add(R.drawable.women_safety);
-        Icons.add(R.drawable.women_safety);
 
         //PhoneCall on click
         grid_women.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -107,13 +88,12 @@ public class categ_women extends AppCompatActivity {
             ImageView itemIcon = v.findViewById(R.id.itemIcon);
             TextView itemName = v.findViewById(R.id.itemName);
             TextView itemNo = v.findViewById(R.id.itemNum);
-            int pos = position%colors.size();
-            itemIcon.setBackgroundColor(getResources().getColor(colors.get(pos)));
-            itemName.setBackgroundColor(getResources().getColor(colors.get(pos)));
-            itemNo.setBackgroundColor(getResources().getColor(colors.get(pos)));
+            itemIcon.setBackgroundColor(getResources().getColor(R.color.OrangeCard));
+            itemName.setBackgroundColor(getResources().getColor(R.color.OrangeCard));
+            itemNo.setBackgroundColor(getResources().getColor(R.color.OrangeCard));
             itemName.setText(text.get(position));
             itemNo.setText(number.get(position));
-            itemIcon.setImageResource(Icons.get(position));
+            itemIcon.setImageResource(R.drawable.women_helpline_no);
             return v;
         }
     }

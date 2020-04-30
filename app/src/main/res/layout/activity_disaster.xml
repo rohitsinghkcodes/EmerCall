@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/BackBlue"
-    tools:context=".children">
+    tools:context=".disaster">
 
     <GridView
-        android:id="@+id/grid_child"
+        android:id="@+id/grid_disaster"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"

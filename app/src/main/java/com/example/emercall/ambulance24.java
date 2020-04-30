@@ -22,71 +22,61 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class foreigner extends AppCompatActivity {
-    GridView grid_foreign;
+public class ambulance24 extends AppCompatActivity {
+    GridView grid_amb24;
     MyAdapter myAdapter;
     ArrayList<String> text = new ArrayList<>();
-    ArrayList<Integer> colors = new ArrayList<>();
-    ArrayList<Integer> Icons = new ArrayList<>();
-    ArrayList<String> number = new ArrayList<>();
-    public static final int REQUEST_CALL = 1;
+    ArrayList<String> num = new ArrayList<>();
+
+    private static final int REQUEST_CALL = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foreigner);
+        setContentView(R.layout.activity_ambulance24);
 
-        this.setTitle("FOREIGN AFFAIR EMERCALLS");
+        grid_amb24 = findViewById(R.id.grid_amb24);
+        myAdapter = new MyAdapter();
+        grid_amb24.setAdapter(myAdapter);
+
+        //To change toolbar title
+        this.setTitle("24-HOUR AMBULANCE");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        grid_foreign = findViewById(R.id.grid_foreign);
-        myAdapter = new MyAdapter();
-        grid_foreign.setAdapter(myAdapter);
+        //Numbers
+        text.add("AIIMS");
+        text.add("AIIMS (2)");
+        text.add("Centralised Accident Trauma Service");
+
+        text.add("Escort Hospital");
+        text.add("National Heart Institute");
+        text.add("Max Emergency Ambulance");
+
+        text.add("Rajiv Gandhi National Institute");
 
         //Numbers
-        text.add("");
-        text.add("");
-        text.add("");
-        text.add("");
-        text.add("");
-        text.add("");
+        num.add("26594405");
+        num.add("011 26588766");
+        num.add("1099");
 
-        //Numbers
-        number.add("#");
-        number.add("#");
-        number.add("#");
-        number.add("#");
-        number.add("#");
-        number.add("#");
+        num.add("011 26825000");
+        num.add("011 26441293");
+        num.add("00140554055");
 
-        //COLORS
-        colors.add(R.color.PinkCard);
-        colors.add(R.color.OrangeCard);
-        colors.add(R.color.greenCard);
-        colors.add(R.color.Yellow);
-        colors.add(R.color.flora);
-        colors.add(R.color.LightYellow);
+        num.add("011 27055011");
 
-        //ICONS
-        Icons.add(R.drawable.foreigner);
-        Icons.add(R.drawable.foreigner);
-        Icons.add(R.drawable.foreigner);
-        Icons.add(R.drawable.foreigner);
-        Icons.add(R.drawable.foreigner);
-        Icons.add(R.drawable.foreigner);
 
-        //PhoneCall on click
-        grid_foreign.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        grid_amb24.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 makeCall(position);
             }
         });
 
-
     }
 
-    class MyAdapter extends BaseAdapter{
+    class MyAdapter extends BaseAdapter {
 
         @Override
         public int getCount() {
@@ -109,13 +99,13 @@ public class foreigner extends AppCompatActivity {
             ImageView itemIcon = v.findViewById(R.id.itemIcon);
             TextView itemName = v.findViewById(R.id.itemName);
             TextView itemNo = v.findViewById(R.id.itemNum);
-            int pos = position%colors.size();
-            itemIcon.setBackgroundColor(getResources().getColor(colors.get(pos)));
-            itemName.setBackgroundColor(getResources().getColor(colors.get(pos)));
-            itemNo.setBackgroundColor(getResources().getColor(colors.get(pos)));
+
+            itemIcon.setBackgroundColor(getResources().getColor(R.color.PinkCard));
+            itemName.setBackgroundColor(getResources().getColor(R.color.PinkCard));
+            itemNo.setBackgroundColor(getResources().getColor(R.color.PinkCard));
             itemName.setText(text.get(position));
-            itemNo.setText(number.get(position));
-            itemIcon.setImageResource(Icons.get(position));
+            itemNo.setText(num.get(position));
+            itemIcon.setImageResource(R.drawable.ambulance);
             return v;
         }
     }
@@ -123,15 +113,15 @@ public class foreigner extends AppCompatActivity {
     //Code for making a checking permission and making phone call from the app
     void makeCall(int position)
     {
-        String no = number.get(position);
+        String no = num.get(position);
 
         //code for checking permission for making phone calls
         if(no.trim().length() > 0){
-            if(ContextCompat.checkSelfPermission(foreigner.this,
+            if(ContextCompat.checkSelfPermission(ambulance24.this,
                     Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
 
                 //Code for checking manifest permission
-                ActivityCompat.requestPermissions(foreigner.this,
+                ActivityCompat.requestPermissions(ambulance24.this,
                         new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
 
             }else{
@@ -141,7 +131,7 @@ public class foreigner extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
             }
         }else{
-            Toast.makeText(foreigner.this,"Error!\nNumber not exists",Toast.LENGTH_LONG).show();
+            Toast.makeText(ambulance24.this,"Error!\nNumber no exists",Toast.LENGTH_LONG).show();
         }
     }
 
@@ -152,7 +142,7 @@ public class foreigner extends AppCompatActivity {
         if(requestCode == REQUEST_CALL){
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
             }else{
-                Toast.makeText(foreigner.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ambulance24.this, "Permission Denied", Toast.LENGTH_SHORT).show();
             }
         }
     }

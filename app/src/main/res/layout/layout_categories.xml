@@ -20,10 +20,10 @@
             <ImageView
                 android:id="@+id/itemIcon"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="match_parent"
                 android:background="@color/OrangeCard"
                 android:padding="15dp"
-                android:src="@drawable/default_avatar" />
+                android:src="@drawable/emer_call" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:orientation="vertical"
@@ -39,7 +39,8 @@
                 android:paddingBottom="5dp"
                 android:text="Fire Emergency"
                 android:textColor="#ffffff"
-                android:textSize="22dp" />
+                android:textSize="22dp"
+                android:paddingHorizontal="5dp"/>
 
             <TextView
                 android:id="@+id/itemNum"
@@ -51,7 +52,8 @@
                 android:paddingBottom="22.5dp"
                 android:text="Fire Number"
                 android:textColor="#ffffff"
-                android:textSize="17dp" />
+                android:textSize="17dp"
+                android:paddingHorizontal="5dp"/>
                 </LinearLayout>
 
         </LinearLayout>

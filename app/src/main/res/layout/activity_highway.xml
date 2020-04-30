@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/BackBlue"
-    tools:context=".foreigner">
+    tools:context=".highway">
 
     <GridView
-        android:id="@+id/grid_foreign"
+        android:id="@+id/grid_highway"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"

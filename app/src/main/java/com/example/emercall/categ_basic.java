@@ -26,8 +26,6 @@ public class categ_basic extends AppCompatActivity {
     GridView gridBasic;
     MyAdapter myAdapter;
     ArrayList<String> text = new ArrayList<>();
-    ArrayList<Integer> colors = new ArrayList<>();
-    ArrayList<Integer> Icons = new ArrayList<>();
     ArrayList<String> num = new ArrayList<>();
 
     private static final int REQUEST_CALL = 1;
@@ -42,39 +40,40 @@ public class categ_basic extends AppCompatActivity {
         gridBasic.setAdapter(myAdapter);
 
         //To change toolbar title
-        this.setTitle("PRIMARY EMERCALLS");
+        this.setTitle("IMPORTANT HELPLINE");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Numbers
         text.add("National Emergency Number");
         text.add("Police");
         text.add("Fire");
+
         text.add("Ambulance");
         text.add("Medical Helpline");
-        //text.add("FOREIGNERS");
+        text.add("Women Helpline");
+
+        text.add("Kisan CallCentre");
+        text.add("Tourist Helpline");
+        text.add("LPG Leakage");
+
+        text.add("Indian Stuck Abroad");
 
         //Numbers
         num.add("112");
         num.add("100");
         num.add("101");
+
         num.add("102");
         num.add("108");
+        num.add("1091");
 
-        //COLORS
-        colors.add(R.color.PinkCard);
-        colors.add(R.color.OrangeCard);
-        colors.add(R.color.greenCard);
-        colors.add(R.color.Yellow);
-        colors.add(R.color.flora);
-        //colors.add(R.color.LightYellow);
+        num.add("1551");
+        num.add("1363");
+        num.add("1906");
 
-        //ICONS
-        Icons.add(R.drawable.nat_emer_no);
-        Icons.add(R.drawable.police);
-        Icons.add(R.drawable.fire);
-        Icons.add(R.drawable.ambulance);
-        Icons.add(R.drawable.medical_helpline);
-       // Icons.add(R.drawable.foreigner);
+        num.add("1800113090");
+
+
 
         gridBasic.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -108,13 +107,13 @@ public class categ_basic extends AppCompatActivity {
             ImageView itemIcon = v.findViewById(R.id.itemIcon);
             TextView itemName = v.findViewById(R.id.itemName);
             TextView itemNo = v.findViewById(R.id.itemNum);
-            int pos = position%colors.size();
-            itemIcon.setBackgroundColor(getResources().getColor(colors.get(pos)));
-            itemName.setBackgroundColor(getResources().getColor(colors.get(pos)));
-            itemNo.setBackgroundColor(getResources().getColor(colors.get(pos)));
+
+            itemIcon.setBackgroundColor(getResources().getColor(R.color.PinkCard));
+            itemName.setBackgroundColor(getResources().getColor(R.color.PinkCard));
+            itemNo.setBackgroundColor(getResources().getColor(R.color.PinkCard));
             itemName.setText(text.get(position));
             itemNo.setText(num.get(position));
-            itemIcon.setImageResource(Icons.get(position));
+            itemIcon.setImageResource(R.drawable.primary);
             return v;
         }
     }

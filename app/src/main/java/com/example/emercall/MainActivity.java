@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     GridView gridMain;
     Myadapter myAdap;
     ArrayList<String> data = new ArrayList<>();
-    //ArrayList<Integer> colors = new ArrayList<>();
+    ArrayList<Integer> colors = new ArrayList<>();
     ArrayList<Integer> Icons = new ArrayList<>();
     private long backPressedTime ;
     private  Toast backToast;
@@ -79,31 +79,45 @@ public class MainActivity extends AppCompatActivity {
         gridMain.setAdapter(myAdap);
 
         //To change toolbar title
-        this.setTitle("EmerCall Categories");
+        this.setTitle("CATEGORIES");
 
         //CATEGORIES
-        data.add("BASIC EMERCALLS");
-        data.add("ENQUIRY");
+        data.add("IMPORTANT HELPLINE");
+        data.add("MEDICAL HELPLINES");
         data.add("ACCIDENTS");
-        data.add("WOMEN SAFETY");
-        data.add("CHILD SAFETY");
-        data.add("FOREIGNERS");
 
-        //COLORS
-        //colors.add(R.color.flora);
-//        colors.add(R.color.greenCard);
-//        colors.add(R.color.Yellow);
-//        colors.add(R.color.OrangeCard);
-//        colors.add(R.color.PinkCard);
-//        colors.add(R.color.LightYellow);
+        data.add("WOMEN SAFETY HELPLINE");
+        data.add("DISASTER MANAGEMENT");
+        data.add("24-HOUR AMBULANCE");
+
+        data.add("SUICIDE HELPLINE");
+        data.add("HIGHWAY HELPLINE");
+        data.add("INDIAN RAILWAY");
+
+        data.add("CHILD SAFETY HELPLINE");
 
         //ICONS
         Icons.add(R.drawable.primary);
-        Icons.add(R.drawable.icon_enquiry);
+        Icons.add(R.drawable.medical_helpline);
         Icons.add(R.drawable.accidents);
-        Icons.add(R.drawable.women_safety);
-        Icons.add(R.drawable.child);
-        Icons.add(R.drawable.foreigner);
+
+        Icons.add(R.drawable.women_helpline_no);
+        Icons.add(R.drawable.disast);
+        Icons.add(R.drawable.ambulance);
+
+        Icons.add(R.drawable.hang);
+        Icons.add(R.drawable.roadaccident);
+        Icons.add(R.drawable.train);
+
+
+        Icons.add(R.drawable.women_child);
+
+        //colors
+        colors.add(R.color.PinkCard);
+        colors.add(R.color.Yellow);
+        colors.add(R.color.greenCard);
+        colors.add(R.color.OrangeCard);
+        colors.add(R.color.flora);
 
         //onclick
         gridMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -116,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                         break;
                     case 1:
-                        Intent j = new Intent(MainActivity.this,enquiry.class);
+                        Intent j = new Intent(MainActivity.this,medical.class);
                         startActivity(j);
                         break;
                     case 2:
@@ -128,12 +142,28 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(l);
                         break;
                     case 4:
-                        Intent m = new Intent(MainActivity.this,children.class);
+                        Intent m = new Intent(MainActivity.this,disaster.class);
                         startActivity(m);
                         break;
                     case 5:
-                        Intent n = new Intent(MainActivity.this,foreigner.class);
+                        Intent n = new Intent(MainActivity.this,ambulance24.class);
                         startActivity(n);
+                        break;
+                    case 6:
+                        Intent o = new Intent(MainActivity.this,suicide.class);
+                        startActivity(o);
+                        break;
+                    case 7:
+                        Intent p = new Intent(MainActivity.this,highway.class);
+                        startActivity(p);
+                        break;
+                    case 8:
+                        Intent q = new Intent(MainActivity.this,enquiry.class);
+                        startActivity(q);
+                        break;
+                    case 9:
+                        Intent r = new Intent(MainActivity.this,chlid_help.class);
+                        startActivity(r);
                         break;
                     default:
                         Toast.makeText(MainActivity.this, "Select a valid category", Toast.LENGTH_LONG).show();
@@ -165,8 +195,9 @@ public class MainActivity extends AppCompatActivity {
             View v = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_main,null);
             ImageView cateIcon = v.findViewById(R.id.cateIcon);
             TextView cateName = v.findViewById(R.id.cateName);
-            cateIcon.setBackgroundColor(getResources().getColor(R.color.flora));
-            cateName.setBackgroundColor(getResources().getColor(R.color.flora));
+            int pos = position%colors.size();
+            cateIcon.setBackgroundColor(getResources().getColor(colors.get(pos)));
+            cateName.setBackgroundColor(getResources().getColor(colors.get(pos)));
             cateName.setText(data.get(position));
             cateIcon.setImageResource(Icons.get(position));
             return v;

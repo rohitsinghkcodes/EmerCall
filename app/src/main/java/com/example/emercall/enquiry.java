@@ -26,8 +26,6 @@ public class enquiry extends AppCompatActivity {
     GridView grid_enquiry;
     MyAdapter myAdapter;
     ArrayList<String> text = new ArrayList<>();
-    ArrayList<Integer> colors = new ArrayList<>();
-    ArrayList<Integer> Icons = new ArrayList<>();
     ArrayList<String> number = new ArrayList<>();
 
     private static final int REQUEST_CALL = 1;
@@ -38,7 +36,7 @@ public class enquiry extends AppCompatActivity {
         setContentView(R.layout.activity_enquiry);
 
         //To change toolbar title
-        this.setTitle("ENQUIRY EMERCALLS");
+        this.setTitle(" INDIAN RAILWAY");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         grid_enquiry = findViewById(R.id.grid_enquiry);
@@ -46,38 +44,16 @@ public class enquiry extends AppCompatActivity {
         grid_enquiry.setAdapter(myAdapter);
 
 
+        //Numbers
+        text.add("Railway General Enquiry");
+        text.add("Railway Central Enquiry");
+        text.add("Railway complaint");
 
         //Numbers
-        text.add("");
-        text.add("");
-        text.add("");
-        text.add("");
-        text.add("");
-        text.add("");
+        number.add("131");
+        number.add("139");
+        number.add("1512");
 
-        //Numbers
-        number.add("#");
-        number.add("#");
-        number.add("#");
-        number.add("#");
-        number.add("#");
-        number.add("#");
-
-        //COLORS
-        colors.add(R.color.PinkCard);
-        colors.add(R.color.OrangeCard);
-        colors.add(R.color.greenCard);
-        colors.add(R.color.Yellow);
-        colors.add(R.color.flora);
-        colors.add(R.color.LightYellow);
-
-        //ICONS
-        Icons.add(R.drawable.icon_enquiry);
-        Icons.add(R.drawable.icon_enquiry);
-        Icons.add(R.drawable.icon_enquiry);
-        Icons.add(R.drawable.icon_enquiry);
-        Icons.add(R.drawable.icon_enquiry);
-        Icons.add(R.drawable.icon_enquiry);
 
         //PhoneCall on click
         grid_enquiry.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -111,13 +87,12 @@ public class enquiry extends AppCompatActivity {
             ImageView itemIcon = v.findViewById(R.id.itemIcon);
             TextView itemName = v.findViewById(R.id.itemName);
             TextView itemNo = v.findViewById(R.id.itemNum);
-               int pos = position%colors.size();
-            itemIcon.setBackgroundColor(getResources().getColor(colors.get(pos)));
-            itemName.setBackgroundColor(getResources().getColor(colors.get(pos)));
-            itemNo.setBackgroundColor(getResources().getColor(colors.get(pos)));
+            itemIcon.setBackgroundColor(getResources().getColor(R.color.OrangeCard));
+            itemName.setBackgroundColor(getResources().getColor(R.color.OrangeCard));
+            itemNo.setBackgroundColor(getResources().getColor(R.color.OrangeCard));
             itemName.setText(text.get(position));
             itemNo.setText(number.get(position));
-            itemIcon.setImageResource(Icons.get(position));
+            itemIcon.setImageResource(R.drawable.train);
             return v;
         }
     }

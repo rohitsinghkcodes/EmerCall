@@ -22,61 +22,42 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class children extends AppCompatActivity {
-    GridView grid_child;
+public class suicide extends AppCompatActivity {
+    GridView grid_suicide;
     MyAdapter myAdapter;
     ArrayList<String> text = new ArrayList<>();
-    ArrayList<Integer> colors = new ArrayList<>();
-    ArrayList<Integer> Icons = new ArrayList<>();
-    ArrayList<String> number = new ArrayList<>();
-    public static final int REQUEST_CALL = 1;
+    ArrayList<String> num = new ArrayList<>();
+
+    private static final int REQUEST_CALL = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_children);
+        setContentView(R.layout.activity_suicide);
 
-        this.setTitle("CHILD SAFETY EMERCALLS");
+        grid_suicide = findViewById(R.id.grid_suicide);
+        myAdapter = new MyAdapter();
+        grid_suicide.setAdapter(myAdapter);
+
+        //To change toolbar title
+        this.setTitle("SUICIDE HELPLINE");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        grid_child = findViewById(R.id.grid_child);
-        myAdapter = new MyAdapter();
-        grid_child.setAdapter(myAdapter);
+        //Numbers
+        text.add("Indian Bipolar Foundation");
+        text.add("CALL");
+        text.add("Jeevan Astha Helpline");
+
+        text.add("AASRA");
 
         //Numbers
-        text.add("");
-        text.add("");
-        text.add("");
-        text.add("");
-        text.add("");
-        text.add("");
+        num.add("8888817666");
+        num.add("104");
+        num.add("18002333330");
 
-        //Numbers
-        number.add("#");
-        number.add("#");
-        number.add("#");
-        number.add("#");
-        number.add("#");
-        number.add("#");
+        num.add("09820466726");
 
-        //COLORS
-        colors.add(R.color.PinkCard);
-        colors.add(R.color.OrangeCard);
-        colors.add(R.color.greenCard);
-        colors.add(R.color.Yellow);
-        colors.add(R.color.flora);
-        colors.add(R.color.LightYellow);
-
-        //ICONS
-        Icons.add(R.drawable.child);
-        Icons.add(R.drawable.child);
-        Icons.add(R.drawable.child);
-        Icons.add(R.drawable.child);
-        Icons.add(R.drawable.child);
-        Icons.add(R.drawable.child);
-
-        //PhoneCall on click
-        grid_child.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        grid_suicide.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 makeCall(position);
@@ -85,7 +66,7 @@ public class children extends AppCompatActivity {
 
     }
 
-    class MyAdapter extends BaseAdapter{
+    class MyAdapter extends BaseAdapter {
 
         @Override
         public int getCount() {
@@ -108,13 +89,13 @@ public class children extends AppCompatActivity {
             ImageView itemIcon = v.findViewById(R.id.itemIcon);
             TextView itemName = v.findViewById(R.id.itemName);
             TextView itemNo = v.findViewById(R.id.itemNum);
-            int pos = position%colors.size();
-            itemIcon.setBackgroundColor(getResources().getColor(colors.get(pos)));
-            itemName.setBackgroundColor(getResources().getColor(colors.get(pos)));
-            itemNo.setBackgroundColor(getResources().getColor(colors.get(pos)));
+
+            itemIcon.setBackgroundColor(getResources().getColor(R.color.Yellow));
+            itemName.setBackgroundColor(getResources().getColor(R.color.Yellow));
+            itemNo.setBackgroundColor(getResources().getColor(R.color.Yellow));
             itemName.setText(text.get(position));
-            itemNo.setText(number.get(position));
-            itemIcon.setImageResource(Icons.get(position));
+            itemNo.setText(num.get(position));
+            itemIcon.setImageResource(R.drawable.hang);
             return v;
         }
     }
@@ -122,15 +103,15 @@ public class children extends AppCompatActivity {
     //Code for making a checking permission and making phone call from the app
     void makeCall(int position)
     {
-        String no = number.get(position);
+        String no = num.get(position);
 
         //code for checking permission for making phone calls
         if(no.trim().length() > 0){
-            if(ContextCompat.checkSelfPermission(children.this,
+            if(ContextCompat.checkSelfPermission(suicide.this,
                     Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
 
                 //Code for checking manifest permission
-                ActivityCompat.requestPermissions(children.this,
+                ActivityCompat.requestPermissions(suicide.this,
                         new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
 
             }else{
@@ -140,7 +121,7 @@ public class children extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
             }
         }else{
-            Toast.makeText(children.this,"Error!\nNumber not exists",Toast.LENGTH_LONG).show();
+            Toast.makeText(suicide.this,"Error!\nNumber no exists",Toast.LENGTH_LONG).show();
         }
     }
 
@@ -151,7 +132,7 @@ public class children extends AppCompatActivity {
         if(requestCode == REQUEST_CALL){
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
             }else{
-                Toast.makeText(children.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(suicide.this, "Permission Denied", Toast.LENGTH_SHORT).show();
             }
         }
     }

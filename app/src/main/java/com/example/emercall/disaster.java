@@ -22,47 +22,51 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class accidents extends AppCompatActivity {
-    GridView acci_grid;
+public class disaster extends AppCompatActivity {
+    GridView grid_disaster;
     MyAdapter myAdapter;
     ArrayList<String> text = new ArrayList<>();
-    ArrayList<String> number = new ArrayList<>();
-    public static final int REQUEST_CALL = 1;
+    ArrayList<String> num = new ArrayList<>();
+
+    private static final int REQUEST_CALL = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_accidents);
+        setContentView(R.layout.activity_disaster);
 
-        this.setTitle("ACCIDENT HELPLINE");
+        grid_disaster = findViewById(R.id.grid_disaster);
+        myAdapter = new MyAdapter();
+        grid_disaster.setAdapter(myAdapter);
+
+        //To change toolbar title
+        this.setTitle("DISASTER MANAGEMENT");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        acci_grid = findViewById(R.id.acci_grid);
-        myAdapter = new MyAdapter();
-        acci_grid.setAdapter(myAdapter);
+        //Numbers
+        text.add("Disaster Management (NDMA)");
+        text.add("Disaster Management Services");
+        text.add("Earthquake / Food / Disaster\n(NDRF Headquarter)");
+
+        text.add("Relief Commissioner for Natural Calamities");
 
         //Numbers
-        text.add("Road Accident Emergency Service");
-        text.add("Road Accident Emergency On National Highway for Private Operators");
-        text.add("Railway Accident Emergency Service");
+        num.add("1078");
+        num.add("108");
+        num.add("9711077372");
 
-        //Numbers
-        number.add("1073");
-        number.add("1033");
-        number.add("1072");
+        num.add("1070");
 
 
-        //PhoneCall on click
-        acci_grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        grid_disaster.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 makeCall(position);
             }
         });
-
     }
 
-    class MyAdapter extends BaseAdapter{
+    class MyAdapter extends BaseAdapter {
 
         @Override
         public int getCount() {
@@ -85,12 +89,13 @@ public class accidents extends AppCompatActivity {
             ImageView itemIcon = v.findViewById(R.id.itemIcon);
             TextView itemName = v.findViewById(R.id.itemName);
             TextView itemNo = v.findViewById(R.id.itemNum);
-            itemIcon.setBackgroundColor(getResources().getColor(R.color.greenCard));
-            itemName.setBackgroundColor(getResources().getColor(R.color.greenCard));
-            itemNo.setBackgroundColor(getResources().getColor(R.color.greenCard));
+
+            itemIcon.setBackgroundColor(getResources().getColor(R.color.flora));
+            itemName.setBackgroundColor(getResources().getColor(R.color.flora));
+            itemNo.setBackgroundColor(getResources().getColor(R.color.flora));
             itemName.setText(text.get(position));
-            itemNo.setText(number.get(position));
-            itemIcon.setImageResource(R.drawable.accidents);
+            itemNo.setText(num.get(position));
+            itemIcon.setImageResource(R.drawable.disast);
             return v;
         }
     }
@@ -98,15 +103,15 @@ public class accidents extends AppCompatActivity {
     //Code for making a checking permission and making phone call from the app
     void makeCall(int position)
     {
-        String no = number.get(position);
+        String no = num.get(position);
 
         //code for checking permission for making phone calls
         if(no.trim().length() > 0){
-            if(ContextCompat.checkSelfPermission(accidents.this,
+            if(ContextCompat.checkSelfPermission(disaster.this,
                     Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
 
                 //Code for checking manifest permission
-                ActivityCompat.requestPermissions(accidents.this,
+                ActivityCompat.requestPermissions(disaster.this,
                         new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
 
             }else{
@@ -116,7 +121,7 @@ public class accidents extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
             }
         }else{
-            Toast.makeText(accidents.this,"Error!\nNumber not exists",Toast.LENGTH_LONG).show();
+            Toast.makeText(disaster.this,"Error!\nNumber no exists",Toast.LENGTH_LONG).show();
         }
     }
 
@@ -127,9 +132,8 @@ public class accidents extends AppCompatActivity {
         if(requestCode == REQUEST_CALL){
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
             }else{
-                Toast.makeText(accidents.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(disaster.this, "Permission Denied", Toast.LENGTH_SHORT).show();
             }
         }
     }
 }
-
