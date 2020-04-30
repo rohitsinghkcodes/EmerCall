@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "994604459789",
+    "firebase_url": "https://emercall-143bd.firebaseio.com",
+    "project_id": "emercall-143bd",
+    "storage_bucket": "emercall-143bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994604459789:android:a7e9323d97a736ef837244",
+        "android_client_info": {
+          "package_name": "com.example.emercall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994604459789-6gtjhu6l23m342oifitd8mb3dtah4tmk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHuawIzo0Z3cZiz1Ya-g6EKpvM6DwlJcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994604459789-6gtjhu6l23m342oifitd8mb3dtah4tmk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

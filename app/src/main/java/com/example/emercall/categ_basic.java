@@ -40,7 +40,7 @@ public class categ_basic extends AppCompatActivity {
         gridBasic.setAdapter(myAdapter);
 
         //To change toolbar title
-        this.setTitle("IMPORTANT HELPLINE");
+        this.setTitle("IMPORTANT HELPLINES");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Numbers

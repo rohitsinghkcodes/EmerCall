@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         this.setTitle("CATEGORIES");
 
         //CATEGORIES
-        data.add("IMPORTANT HELPLINE");
+        data.add("IMPORTANT HELPLINES");
         data.add("MEDICAL HELPLINES");
         data.add("ACCIDENTS");
 
