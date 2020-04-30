@@ -1,5 +1,5 @@
 # EmerCall
-* **Emergencies** have a way of sapping our strength and rendering otherwise intelligent adults into hand-wringing, wailing lumps of hysterics. The surge of panic paralyzes rational thought, and suddenly you're at the mercy of prior preparation.
+* Emergencies have a way of sapping our strength and rendering otherwise intelligent adults into hand-wringing, wailing lumps of hysterics. The surge of panic paralyzes rational thought, and suddenly you're at the mercy of prior preparation.
 
 * In a perfect world, the type of world we all believed we would inhabit when we were still childless parenting experts, there would never be a need for emergency phone numbers, frantic calls to poison control, emergency doctor visits, or white-faced ambulance rides where the little boy who loves sirens finds himself in the belly of the siren king.
 Alas, such a world is not the one we inhabit. Thankfully, we have access to emergency services when those events occur.
