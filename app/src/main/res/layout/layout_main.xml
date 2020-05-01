@@ -28,14 +28,14 @@
                 android:id="@+id/cateName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Fire Emergency"
                 android:layout_gravity="center"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textSize="15dp"
                 android:background="@color/OrangeCard"
-                android:padding="10dp"
-                android:paddingBottom="5dp"/>
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="Fire Emergency\nEmergency"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:paddingVertical="10dp"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
