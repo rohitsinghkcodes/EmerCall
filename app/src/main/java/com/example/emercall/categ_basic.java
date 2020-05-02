@@ -44,6 +44,9 @@ public class categ_basic extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Numbers
+        text.add("CORONA");
+        text.add("CORONA (2)");
+
         text.add("National Emergency Number");
         text.add("Police");
         text.add("Fire");
@@ -59,6 +62,9 @@ public class categ_basic extends AppCompatActivity {
         text.add("Indian Stuck Abroad");
 
         //Numbers
+        num.add("1075");
+        num.add("011 23978046");
+
         num.add("112");
         num.add("100");
         num.add("101");

@@ -47,7 +47,7 @@ public class medical extends AppCompatActivity {
         //Numbers
         text.add("Medical Helpline");
         text.add("Air Amulance");
-        text.add("Aids Helpline");
+        text.add("AIDS Helpline");
 
         text.add("Anti-Poison (Delhi)");
         text.add("Blood Bank Helpline");
