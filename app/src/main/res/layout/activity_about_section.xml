@@ -97,12 +97,7 @@
                     android:layout_height="50dp"
                     android:layout_margin="18dp"
                     android:src="@drawable/github"/>
-                <ImageView
-                    android:id="@+id/insta"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="18dp"
-                    android:src="@drawable/insta"/>
+
                 <ImageView
                     android:id="@+id/twitter"
                     android:layout_width="50dp"

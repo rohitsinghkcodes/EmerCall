@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class about_section extends AppCompatActivity {
 TextView copyright;
 String copy;
-ImageView insta,twitter,ld_in,github;
+ImageView twitter,ld_in,github;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +26,10 @@ ImageView insta,twitter,ld_in,github;
         copy = "\u00a9 ROHIT KUMAR SINGH";
         copyright.setText(copy);
 
-        insta = findViewById(R.id.insta);
         twitter = findViewById(R.id.twitter);
         ld_in = findViewById(R.id.ld_in);
         github = findViewById(R.id.git);
 
-        insta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                click("https://www.instagram.com/photography_rohit.in/");
-            }
-        });
 
         ld_in.setOnClickListener(new View.OnClickListener() {
             @Override
