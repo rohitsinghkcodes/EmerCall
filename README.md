@@ -14,9 +14,8 @@ Alas, such a world is not the one we inhabit. Thankfully, we have access to emer
 ## Installation :arrow_down:
 You can install it in your **Android Device**  by the link given below: 
 
-```
-link will be added soon...
-```
+https://rohitsinghkcodes.github.io/EmerCall-Updates/
+
 
 
 ## Main Highlights :sparkles:
