@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
@@ -53,12 +55,17 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId())
         {
             case R.id.exit:
                 MainActivity.super.onBackPressed();
+                return true;
+            case R.id.update:
+                click("https://rohitsinghkcodes.github.io/EmerCall-Updates/");
                 return true;
             case R.id.about:
                 Intent i =new Intent(MainActivity.this,about_section.class);
@@ -204,5 +211,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+    }
+
+    public void click(String url)
+    {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
     }
 }

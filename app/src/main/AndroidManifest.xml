@@ -11,18 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".chlid_help"
-            android:parentActivityName=".MainActivity" ></activity>
-        <activity android:name=".highway"
+        <activity
+            android:name=".chlid_help"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".suicide"
-            android:parentActivityName=".MainActivity"  />
-        <activity android:name=".ambulance24"
-            android:parentActivityName=".MainActivity"  />
-        <activity android:name=".disaster"
-            android:parentActivityName=".MainActivity"  />
-        <activity android:name=".medical"
-            android:parentActivityName=".MainActivity"  />
+        <activity
+            android:name=".highway"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".suicide"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ambulance24"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".disaster"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medical"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".about_section"
             android:parentActivityName=".MainActivity" />
